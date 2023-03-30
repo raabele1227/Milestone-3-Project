@@ -1,9 +1,22 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const itemSchema = [
+const itemSchema = newSchema({
+
+  itemName: { type: String, required: [true, 'item name is required'] },
+  itemTopic: { type: String, required: [true, 'item topic is required'] },
+  details: { type: String, required: [true, 'details are required'] },
+  roastType: { type: String, required: [true, 'roast type is required'] },
+  coffeeName: { type: String, required: [true, 'coffee name is required'] },
+  date: { type: Date, default: Date.now },
+  user: { type: Schema.Types.ObjectId, ref: "User" },
+});
+
+// collection name in database is "items"
+module.exports = mongoose.model("Item", itemSchema);
+const Item = mongoose.model("Item", itemSchema);
   {
-    id: "1",
+    _id: "1",
     roastType: "Light",
     coffeeName: "Cinnamon",
   },
