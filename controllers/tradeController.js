@@ -1,4 +1,4 @@
-const model = require("../models/items");
+const model = require("../models/items.js");
 
 exports.new = (req, res) => {
   res.render("./items/new");
