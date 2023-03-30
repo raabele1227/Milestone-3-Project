@@ -1,0 +1,156 @@
+This assignment is intended to familiarize students with the use of a persistence data component in a network-based application.  The goal is to to continue using the MVC design pattern to build a Express web application with an integrated database. The assignment assumes students' familiarity with static HTML design, use of Express routes, EJS template pages for the presentation, and JavaScript functions and literal objects for the business logic.
+
+This assignment is to be completed and submitted individually.  No group work is allowed.
+
+If you have questions, please post them on Campuswire.
+
+In this assignment, you will add new features to your previous web application, according to the following specifications:
+
+Correct any errors identified or partial/missing functionality from the previous assignments. If your application developed in project 2 has error or not complete, it is your responsibility to communicate and coordinate with course staff to help fix the errors. Keep in mind that you are building this application in stages. It is important that you have a working application for each stage.
+All structure, design, and content requirements from the previous assignment are mandatory, unless explicitly updated in this assignment description.
+Use the MVC pattern
+Model:  use Mongoose to integrate a MongoDB database to provide persistent data storage.
+View: use EJS pages to present the view to the browser.
+Use modularized routes to forward the request to the appropriate controller function.
+Use modularized controller to control the flow of the application.
+
+
+
+Integrate MongoDB as database
+For this assignment, the application uses a MongoDB database to store data. Further, it uses Mongoose to integrate the database into the web application. To do so, create a schema and compile a model for trades in your application. Each trade document should include at least the following fields:
+
+_id
+item name 
+item topic
+details
+You may include additional fields to fit your application needs. Your schema should include validation rules on the fields. At minimum, all of the fields must use the required validator. You may choose to use additional validators that make sense to your application.
+
+Database creation and population
+Create a database script that contains all of the MongoDB queries that you use to (1) create, and (2) populate your database and collection. Save this file as a plain text file (NOT word or RT or PDF or any other fancy document format). Name the file as milestone3_createDB.txt. Your database should be populated with data according to the same requirements from the previous project (at least two categories, with at least 3 trade items per category).
+
+Running the statements in this script should re-create / reset your database to its initial state with initial data (this means that at any point we can revert back to the beginning as a starting point).
+
+Save this file under your project main directory and include it in your project repository (i.e, add and commit).
+
+Update app.js to connect to MongoDB database
+Update the controller module so that the application stores and accesses data from the MongoDB database.
+Update the following EJS view templates to implement input validation on the front end
+the new trade template 
+the edit trade template
+Your front-end validation must be consistent with the schema validation.
+
+Error handling
+You have implemented the basic error handling in Project 2. After integrating database, your app needs to handle more errors. In your controller function, add logic to handle the following errors:
+
+if a request includes an invalid route parameter, for example, the id in the URL is not a valid ObjectId type value, send a 400 error to the user
+for a request to insert or update a document in the database, if mongoose validation fails, send a 400 error to the user
+for any database operations, if an error other than validation error happens, send a 500 error to the user
+
+
+
+hat to submit using Canvas (Email submissions will NOT be accepted):
+
+Push the changes of your milestone 3 progress to the project repo (trade_repo) to submit your work.
+Submit a PDF document (Milestone3Info.pdf) with the following assignment information::
+
+A screenshot of each of your application's pages displayed in your browser
+Description of the RESTful routes for requests associated with trading items. (you can combine this with the screenshots in the previous point)
+Explanation of additional features, if any.
+Explanation of status, and stopping point if incomplete.
+ 
+
+Rubric
+Project Milestone 3 Rubric
+Project Milestone 3 Rubric
+Criteria	Ratings	Pts
+This criterion is linked to a Learning OutcomeApplication starts properly and connects to the database server.
+5 to >0.0 pts
+Full Marks
+0 pts
+No Marks
+5 pts
+This criterion is linked to a Learning OutcomeTrade schema and model
+- a trade should contains sufficient attributes/fields
+- all fields use proper schema validator
+- a model is created and exported
+15 to >0.0 pts
+Full Marks
+0 pts
+No Marks
+15 pts
+This criterion is linked to a Learning OutcomeThe app properly process a request to view the trades page.
+- click 'trades' in the nav bar renders the trades view.
+- the trades page displays all of the trades in some sorted order
+10 to >0.0 pts
+Full Marks
+0 pts
+No Marks
+10 pts
+This criterion is linked to a Learning OutcomeThe app properly process a request to view the trade detail page.
+- click any trade in the trades page, the app renders the trade detail page
+- trade information is complete (all fields other than the id must be present)
+- trade information dynamic and matches database content.
+5 to >0.0 pts
+Full Marks
+0 pts
+No Marks
+5 pts
+This criterion is linked to a Learning OutcomeThe app properly process a request to create a new trade.
+- click 'Create a new trade' in the nav bar, the app renders the new trade page
+- the new trade view template implements input validation
+- the app redirects user according to the outcome of the operation
+10 to >0.0 pts
+Full Marks
+0 pts
+No Marks
+10 pts
+This criterion is linked to a Learning OutcomeThe app properly process a request to edit an existing trade.
+- click the 'update' button in the trade detail page renders the edit trade page with the trade information;
+- the edit trade view template implements input validation
+the app redirects user according to the outcome of the operation.
+10 to >0.0 pts
+Full Marks
+0 pts
+No Marks
+10 pts
+This criterion is linked to a Learning OutcomeThe app properly process a request to delete an existing trade.
+- click the 'delete' button in the trade detail page deletes the trade from the database
+- the app redirects the user to the updated trades view
+5 to >0.0 pts
+Full Marks
+0 pts
+No Marks
+5 pts
+This criterion is linked to a Learning OutcomeAll site links and buttons dispatch properly.
+3 to >0.0 pts
+Full Marks
+0 pts
+No Marks
+3 pts
+This criterion is linked to a Learning OutcomeError handling
+- All errors are handled consistently.
+- In case of a request for an unmatched endpoint, display a 404 error
+- In case of unmatched id for querying, updating and deleting, display a 404 error
+- In case of invalid route parameter, i.e., the route parameter is not a valid ObjectId, display a 400 error
+- The default error handler is used to handle all other errors.
+10 to >0.0 pts
+Full Marks
+0 pts
+No Marks
+10 pts
+This criterion is linked to a Learning OutcomeDB Creation file (project3_createDB.txt)
+Running the statements in this file should also reset database to its initial state.
+2 to >0.0 pts
+Full Marks
+0 pts
+No Marks
+2 pts
+This criterion is linked to a Learning OutcomeIncremental Development
+Revision history demonstrates incremental development with several meaningful commits.
+5 pts
+Full Marks
+Revision history shows incremental development
+0 pts
+No Marks
+5 pts
+Total Points: 80
