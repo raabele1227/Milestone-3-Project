@@ -17,64 +17,73 @@ const itemSchema = newSchema({
 
 // collection name in database is "items"
 module.exports = mongoose.model("Item", itemSchema);
-const Item = mongoose.model("Item", itemSchema);
 
-let items = newItem({
-  itemName: "Cinnamon",
-  itemTopic: "Light",
-  details: "Cinnamon is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a lighter roast coffee.",
-  roastType: "Light",
-  coffeeName: "Cinnamon",
-},
-  {
-    itemName: "New England",
-    itemTopic: "Light",
-    details: "New England is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a lighter roast coffee.",
-    roastType: "Light",
-    coffeeName: "New England",
-  },
-  {
-    itemName: "Half City",
-    itemTopic: "Light",
-    details: "Half City is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a lighter roast coffee.",
-    roastType: "Light",
-    coffeeName: "Half City",
-  },
-  {
-    itemName: "American",
-    itemTopic: "Medium",
-    details: "American is a medium roast coffee that is medium brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a medium roast coffee.",
-    roastType: "Medium",
-    coffeeName: "American",
-  },
-  {
-    itemName: "City",
-    itemTopic: "Medium",
-    details: "City is a medium roast coffee that is medium brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a medium roast coffee.",
-    roastType: "Medium",
-    coffeeName: "City",
-  },
-  {
-    itemName: "Breakfast",
-    itemTopic: "Medium",
-    details: "Breakfast is a medium roast coffee that is medium brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a medium roast coffee.",
-    roastType: "Medium",
-    coffeeName: "Breakfast",
-  },
-  {
-    itemName: "French",
-    itemTopic: "Dark",
-    details: "French is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee.",
-    roastType: "Dark",
-    coffeeName: "French",
-  },
-  {
-    itemName: "Italian",
-    itemTopic: "Dark",
-    details: "Italian is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee.",
-    roastType: "Dark",
-    coffeeName: "Italian",
-  },
+// const Item = mongoose.model("Item", itemSchema);
+
+// let items = newItem({
+//   itemName: "Cinnamon",
+//   itemTopic: "Light",
+//   details: "Cinnamon is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a lighter roast coffee.",
+//   roastType: "Light",
+//   coffeeName: "Cinnamon",
+// },
+//   {
+//     itemName: "New England",
+//     itemTopic: "Light",
+//     details: "New England is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a lighter roast coffee.",
+//     roastType: "Light",
+//     coffeeName: "New England",
+//   },
+//   {
+//     itemName: "Half City",
+//     itemTopic: "Light",
+//     details: "Half City is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a lighter roast coffee.",
+//     roastType: "Light",
+//     coffeeName: "Half City",
+//   },
+//   {
+//     itemName: "American",
+//     itemTopic: "Medium",
+//     details: "American is a medium roast coffee that is medium brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a medium roast coffee.",
+//     roastType: "Medium",
+//     coffeeName: "American",
+//   },
+//   {
+//     itemName: "City",
+//     itemTopic: "Medium",
+//     details: "City is a medium roast coffee that is medium brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a medium roast coffee.",
+//     roastType: "Medium",
+//     coffeeName: "City",
+//   },
+//   {
+//     itemName: "Breakfast",
+//     itemTopic: "Medium",
+//     details: "Breakfast is a medium roast coffee that is medium brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a medium roast coffee.",
+//     roastType: "Medium",
+//     coffeeName: "Breakfast",
+//   },
+//   {
+//     itemName: "French",
+//     itemTopic: "Dark",
+//     details: "French is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee.",
+//     roastType: "Dark",
+//     coffeeName: "French",
+//   },
+//   {
+//     itemName: "Italian",
+//     itemTopic: "Dark",
+//     details: "Italian is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee.",
+//     roastType: "Dark",
+//     coffeeName: "Italian",
+//   }
+
+//   items.validate()
+//   .then(() => {
+//     console.log("Validation passed");
+//   })
+//   .catch(err=>console.log(err.message));
+
+
   // {
   //   itemName: "Espresso",
   //   itemTopic: "Dark",
@@ -140,7 +149,7 @@ let items = newItem({
   // },
   // { 
 
-);
+// );
 
 
 
@@ -265,36 +274,36 @@ let items = newItem({
 //   },
 
 
-exports.create = (newTradeItem) => {
-  tradeItems.push(newTradeItem);
-};
+// exports.create = (newTradeItem) => {
+//   tradeItems.push(newTradeItem);
+// };
 
-exports.find = () => tradeItems;
+// exports.find = () => tradeItems;
 
-exports.findById = (id) => tradeItem.find((tradeItem) => tradeItem.id === id);
+// exports.findById = (id) => tradeItem.find((tradeItem) => tradeItem.id === id);
 
-exports.updateById = function (id, newTradeItem) {
-  let = stories.find((story) => story.id === id);
-  if (story) {
-    story.title = newStory.title;
-    story.content = newStory.content;
-    return true;
-  } else {
-    return false;
-  }
-};
+// exports.updateById = function (id, newTradeItem) {
+//   let = stories.find((story) => story.id === id);
+//   if (story) {
+//     story.title = newStory.title;
+//     story.content = newStory.content;
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
 
-exports.deleteById = function (id) {
-  let index = tradeItem.findIndex((story) => story.id === id);
-  if (index !== -1) {
-    stories.splice(index, 1);
-    console.log("deleted");
-    return true;
-  } else {
-    console.log("not deleted");
-    return false;
-  }
-};
+// exports.deleteById = function (id) {
+//   let index = tradeItem.findIndex((story) => story.id === id);
+//   if (index !== -1) {
+//     stories.splice(index, 1);
+//     console.log("deleted");
+//     return true;
+//   } else {
+//     console.log("not deleted");
+//     return false;
+//   }
+// };
 
 // Path: models/items.js
 

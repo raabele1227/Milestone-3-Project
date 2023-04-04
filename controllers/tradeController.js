@@ -74,19 +74,19 @@ exports.update = (req, res, next) => {
     err.status = 404;
     return next(err);
   }
-  model.findByIdAndUpdate( id, item, { useFindAndModify: false, runValidators: true, new: true } )
-  .then((items) => {
-    if (items) {
-      res.redirect("/tradeItem/" + id);
-    } else {
-      let err = new Error("Cannot find a items with id" + id);
-      err.status = 404;
+  model.findByIdAndUpdate(id, item, { useFindAndModify: false, runValidators: true, new: true })
+    .then((items) => {
+      if (items) {
+        res.redirect("/tradeItem/" + id);
+      } else {
+        let err = new Error("Cannot find a items with id" + id);
+        err.status = 404;
+        next(err);
+      }
+    })
+    .catch(err => {
       next(err);
-    }
-  })
-  .catch(err => {
-    next(err);
-  });
+    });
 };
 
 exports.delete = (req, res, next) => {
@@ -96,7 +96,7 @@ exports.delete = (req, res, next) => {
     err.status = 404;
     return next(err);
   }
-  model.findByIdAndDelete(id, { useFindAndModify: false})
+  model.findByIdAndDelete(id, { useFindAndModify: false })
     .then(items => {
       if (items) {
         res.redirect("/tradeItem");
@@ -106,26 +106,13 @@ exports.delete = (req, res, next) => {
         return next(err);
       }
     })
-    .catch(err => {next(err);
+    .catch(err => {
+      next(err);
     });
 };
 
 
 
-
-
-exports.update = (req, res) => {
-  let items = req.body;
-  let id = req.params.id;
-
-  if (model.updateById(id, items)) {
-    res.redirect("/tradeItem/" + id);
-  } else {
-    let err = new Error("Cannot find a items with id" + id);
-    err.status = 404;
-    next(err);
-  }
-};
 
 
 
