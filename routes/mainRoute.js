@@ -29,18 +29,23 @@ router.get("/contact", (req, res) => {
   res.render("contact");
 });
 
-router.get("/css/index.css", (req, res) => {
-  res.redirect("/css/index.css");
+router.get("/css/styles.css", (req, res) => {
+  res.redirect("/css/styles.css");
 });
 
-router.get("/css/newTrade.css", (req, res) => {
-  res.redirect("/css/newTrade.css");
-});
 
-router.get("/css/trades.css", (req, res) => {
-  res.redirect("/css/trades.css");
-});
+// router.get("/css/index.css", (req, res) => {
+//   res.redirect("/css/index.css");
+// });
 
-router.get("/css/trade.css", (req, res) => {
-  res.redirect("/css/trade.css");
-});
+// router.get("/css/newTrade.css", (req, res) => {
+//   res.redirect("/css/newTrade.css");
+// });
+
+// router.get("/css/trades.css", (req, res) => {
+//   res.redirect("/css/trades.css");
+// });
+
+// router.get("/css/trade.css", (req, res) => {
+//   res.redirect("/css/trade.css");
+// });
