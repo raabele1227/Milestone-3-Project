@@ -22,7 +22,7 @@ app.set("view engine", "ejs");
 
 //connect to database
 mongoose
-  .connect("mongodb://localhost:27017/demos", { 
+  .connect("mongodb://localhost:27017/demos", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -62,16 +62,28 @@ app.get("/newTrade", (req, res) => {
 });
 
 app.get("/trades", (req, res) => {
-  let items = trades.find();
-  let roasts = [...new Set(items.map((item) => item.roastType))];
-  res.render("/trades", { trades: items, roasts: roasts });
+
+  res.render("trades");
 });
 
-app.use((req, res, next) => {
-  let err = new Error("The server cannot locate " + req.url);
-  err.status = 404;
-  next(err);
+app.get("/trades", async (req, res) => {
+  let trades = await Trade.find();
+  let roasts = [...new Set(trades.map((trade) => trade.roastType))];
+  res.render("trades", { trades: trades, roasts: roasts });
 });
+
+
+app.get("/trades/:id", async (req, res) => {
+  let trade = await Trade.findById(req.params.id);
+  res.render("trade", { trade: trade });
+});
+
+
+  app.use((req, res, next) => {
+    let err = new Error("The server cannot locate " + req.url);
+    err.status = 404;
+    next(err);
+  });
 
 app.use((err, req, res, next) => {
   if (!err.status) {
