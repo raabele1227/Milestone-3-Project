@@ -4,6 +4,22 @@ exports.new = (req, res) => {
   res.render("./items/new");
 };
 
+exports.create = (req, res, next) => {
+  let items = new model(req.body);
+  items.save();
+  .then((items) => {
+    console.log(items);
+    res.redirect("/tradeItem");
+  })
+    .catch(err => {
+      if (err.name === "ValidationError") {
+        res.status(400).render("./items/new", { errors: err.errors });
+      }
+      next(err);
+    });
+}
+
+
 exports.edit = (req, res, next) => {
   let id = req.params.id;
   let items = model.findById(id);
@@ -37,3 +53,14 @@ exports.delete = (req, res, next) => {
     next(err);
   }
 };
+
+
+
+
+
+
+
+
+
+
+
