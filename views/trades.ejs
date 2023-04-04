@@ -1,6 +1,25 @@
 <%- include('./partials/header.ejs')%>
 
 <div class="roasts-container">
+  <% trades.map(trade => { %>
+  <div class="trade-card">
+    <div class="trade-title"><%= trade.coffeeName %></div>
+    <div class="trade-card-roasts">
+      <% roasts.filter(roast => roast === trade.roastType).map(roast => { %>
+      <div><%= roast %></div>
+      <% }); %>
+    </div>
+  </div>
+  <% }); %>
+</div>
+
+
+
+
+
+
+<!-- 
+<div class="roasts-container">
   <% roasts.map(roast => { %>
   <div class="roast-card">
     <div class="roast-title"><%= roast %></div>
@@ -11,6 +30,6 @@
     </div>
   </div>
   <% }); %>
-</div>
+</div> -->
 
 <%- include('./partials/footer.ejs')%>
