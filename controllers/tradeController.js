@@ -4,9 +4,10 @@ exports.new = (req, res) => {
   res.render("./items/new");
 };
 
+
 exports.create = (req, res, next) => {
   let items = new model(req.body);
-  items.save();
+  items.save()
   .then((items) => {
     console.log(items);
     res.redirect("/tradeItem");
