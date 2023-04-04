@@ -16,50 +16,210 @@ const itemSchema = newSchema({
 module.exports = mongoose.model("Item", itemSchema);
 const Item = mongoose.model("Item", itemSchema);
 
-// Path: controllers/items.js
-const Item = require("../models/items");
+let items = newItem({
+  itemName: "Cinnamon",
+  itemTopic: "Light",
+  details: "Cinnamon is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a lighter roast coffee.",
+  roastType: "Light",
+  coffeeName: "Cinnamon",
+},
+  {
+    itemName: "New England",
+    itemTopic: "Light",
+    details: "New England is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a lighter roast coffee.",
+    roastType: "Light",
+    coffeeName: "New England",
+  },
+  {
+    itemName: "Half City",
+    itemTopic: "Light",
+    details: "Half City is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a lighter roast coffee.",
+    roastType: "Light",
+    coffeeName: "Half City",
+  },
+  {
+    itemName: "American",
+    itemTopic: "Medium",
+    details: "American is a medium roast coffee that is medium brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a medium roast coffee.",
+    roastType: "Medium",
+    coffeeName: "American",
+  },
+  {
+    itemName: "City",
+    itemTopic: "Medium",
+    details: "City is a medium roast coffee that is medium brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a medium roast coffee.",
+    roastType: "Medium",
+    coffeeName: "City",
+  },
+  {
+    itemName: "Breakfast",
+    itemTopic: "Medium",
+    details: "Breakfast is a medium roast coffee that is medium brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a medium roast coffee.",
+    roastType: "Medium",
+    coffeeName: "Breakfast",
+  },
+  {
+    itemName: "French",
+    itemTopic: "Dark",
+    details: "French is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee.",
+    roastType: "Dark",
+    coffeeName: "French",
+  },
+  {
+    itemName: "Italian",
+    itemTopic: "Dark",
+    details: "Italian is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee.",
+    roastType: "Dark",
+    coffeeName: "Italian",
+  },
+  // {
+  //   itemName: "Espresso",
+  //   itemTopic: "Dark",
+  //   details: "Espresso is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee.",
+  //   roastType: "Dark",
+  //   coffeeName: "Espresso",
+  // },
+  // {
+  //   itemName: "Viennese",
+  //   itemTopic: "Dark",
+  //   details: "Viennese is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee.",
+  //   roastType: "Dark",
+  //   coffeeName: "Viennese",
+  // },
+  // {
+  //   itemName: "New Orleans",
+  //   itemTopic: "Dark",
+  //   details: "New Orleans is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee.",
+  //   roastType: "Dark",
+  //   coffeeName: "New Orleans",
+  // },
+  // {
+  //   itemName: "Continental",
+  //   itemTopic: "Dark",
+  //   details: "Continental is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee.",
+  //   roastType: "Dark",
+  //   coffeeName: "Continental",
+  // },
+  // {
+  //   itemName: "High",
+  //   itemTopic: "Dark",
+  //   details: "High is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee.",
+  //   roastType: "Dark",
+  //   coffeeName: "High",
+  // },
+  // {
+  //   itemName: "New York",
+  //   itemTopic: "Dark",
+  //   details: "New York is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee.",
+  //   roastType: "Dark",
+  //   coffeeName: "New York",
+  // },
+  // {
+  //   itemName: "European",
+  //   itemTopic: "Dark",
+  //   details: "European is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee.",
+  //   roastType: "Dark",
+  //   coffeeName: "European",
+  // },
+  // {
+  //   itemName: "Full City",
+  //   itemTopic: "Dark",
+  //   details: "Full City is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee.",
+  //   roastType: "Dark",
+  //   coffeeName: "Full City",
+  // },
+  // {
+  //   itemName: "Russian",
+  //   itemTopic: "Dark",
+  //   details: "Russian is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee.",
+  //   roastType: "Dark",
+  //   coffeeName: "Russian",
+  // },
+  // { 
 
-exports.create = (req, res) => {
-  let item = new Item(req.body);
-  item.save((err, result) => {
-    if (err) {
-      res.status(400).json({
-        error: err,
-      });
-    }
-    res.json(result);
-  });
-};
-
-exports.list = (req, res) => {
-  Item.find((err, items) => {
-    if (err) {
-      res.status(400).json({
-        error: err,
-      });
-
-      res.json(items);
-    }
-  });
-};
-
-exports.itemById = (req, res, next, id) =>  { 
-  
+);
 
 
 
 
-
-
-
-
-
-
-// {
-//   _id: "1",
+//   {
+//     id: "1",
 //     roastType: "Light",
-//       coffeeName: "Cinnamon",
+//     coffeeName: "Cinnamon",
 //   },
+
+
+
+
+// exports.itemById = function (req, res, next, _id) {
+
+
+//   {
+//     _id: "1",
+//       roastType; "Light",
+//         coffeeName; "Cinnamon";
+
+//   }
+//   {
+//     _id: "2",
+//       roastType; "Light",
+//         coffeeName; "New England"
+//       ;
+//   }
+//   {
+//     _id: "3",
+//       roastType; "Light",
+//         coffeeName; "Half City"
+//       ;
+//   }
+//   {
+//     _id: "4",
+//       roastType; "Medium",
+//         coffeeName; "American",
+//       ;
+//   }
+
+//   {
+//     _id: "5",
+//       roastType; "Medium",
+//         coffeeName; "City",
+//       ;
+//   }
+//   {
+//     _id: "6",
+//       roastType; "Medium",
+//         coffeeName; "Breakfast",
+//       ;
+//   }
+//   {
+//     _id: "7",
+//       roastType; "Dark",
+//         coffeeName; "French",
+//       ;
+//   }
+//   {
+//     _id: "8",
+//       roastType; "Dark",
+//         coffeeName; "Italian",
+//       ;
+//   }
+//   {
+//     _id: "9",
+//       roastType; "Dark",
+//         coffeeName; "Spanish",
+//       ;
+//   }
+
+// };
+
+
+
+
+
+
+//   roastType: "Light",
+//     coffeeName: "Cinnamon",
+// },
 // {
 //   id: "2",
 //     roastType: "Light",
