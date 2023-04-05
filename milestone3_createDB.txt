@@ -1,0 +1,121 @@
+Last login: Tue Apr  4 20:08:20 on ttys000
+rachelabele@Rachels-MacBook-Air-442 ~ % mongosh
+Current Mongosh Log ID:	642cbd9770463332ea3c7d61
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.8.0
+Using MongoDB:		4.4.19
+Using Mongosh:		1.8.0
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2023-03-16T21:39:41.050-04:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+   2023-03-16T21:39:41.051-04:00: Soft rlimits too low
+------
+
+------
+   Free Monitoring URL:
+   https://cloud.mongodb.com/freemonitoring/cluster/33VRVASEPFUEGBUKUFEKWYUDFKWKKLMY
+------
+
+test> use demos
+switched to db demos
+demos> db.createCollection("items")
+MongoServerError: Collection already exists. NS: demos.items
+demos> db.demos.insertOne("coffeeName": "Cinnamon", "roastType": "Light", "details": "Cinnamon is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who prefer a lighter roast coffee."
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:31)
+
+> 1 | db.demos.insertOne("coffeeName": "Cinnamon", "roastType": "Light", "details": "Cinnamon is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who prefer a lighter roast coffee."
+    |                                ^
+  2 |
+
+demos> db.demos.insertOne("coffeeName": "Cinnamon", "roastType": "Light", "details": "Cinnamon is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who prefer a lighter roast coffee."}
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:31)
+
+> 1 | db.demos.insertOne("coffeeName": "Cinnamon", "roastType": "Light", "details": "Cinnamon is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who prefer a lighter roast coffee."}
+    |                                ^
+  2 |
+
+demos> db.demos.insertOne({"coffeeName": "Cinnamon", "roastType": "Light", "details": "Cinnamon is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who prefer a lighter roast coffee."}) 
+{
+  acknowledged: true,
+  insertedId: ObjectId("642cbf0770463332ea3c7d62")
+}
+demos> db.demos.insertOne({ "coffeeName": "New England", "roastType": "Light", "details": "Cinnamon is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who prefer a lighter roast coffee." })
+{
+  acknowledged: true,
+  insertedId: ObjectId("642cbf5e70463332ea3c7d63")
+}
+demos>   db.demos.insertOne({ "coffeeName": "Half City", "roastType": "Light", "details": "Cinnamon is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who prefer a lighter roast coffee." })
+{
+  acknowledged: true,
+  insertedId: ObjectId("642cbf7570463332ea3c7d64")
+}
+demos>  db.demos.insertOne({ "coffeeName": "American", "roastType": "Medium", "details": "American is a medium roast coffee that is medium brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a medium roast coffee."})
+{
+  acknowledged: true,
+  insertedId: ObjectId("642cc02570463332ea3c7d65")
+}
+demos> db.demos.insertOne({ "coffeeName": "City", "roastType": "Medium", "details": "City is a medium roast coffee that is medium brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a medium roast coffee."})
+{
+  acknowledged: true,
+  insertedId: ObjectId("642cc04770463332ea3c7d66")
+}
+demos> db.demos.insertOne({ "coffeeName": "French", "roastType": "Dark", "details": "French is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee."})
+{
+  acknowledged: true,
+  insertedId: ObjectId("642cc07070463332ea3c7d67")
+}
+demos> db.demos.insertOne({ "coffeeName": "Italian", "roastType": "Dark", "details": "Italian is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee."})
+{
+  acknowledged: true,
+  insertedId: ObjectId("642cc08870463332ea3c7d68")
+}
+demos> db.demos.find()
+[
+  {
+    _id: ObjectId("642cbf0770463332ea3c7d62"),
+    coffeeName: 'Cinnamon',
+    roastType: 'Light',
+    details: 'Cinnamon is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who prefer a lighter roast coffee.'
+  },
+  {
+    _id: ObjectId("642cbf5e70463332ea3c7d63"),
+    coffeeName: 'New England',
+    roastType: 'Light',
+    details: 'Cinnamon is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who prefer a lighter roast coffee.'
+  },
+  {
+    _id: ObjectId("642cbf7570463332ea3c7d64"),
+    coffeeName: 'Half City',
+    roastType: 'Light',
+    details: 'Cinnamon is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who prefer a lighter roast coffee.'
+  },
+  {
+    _id: ObjectId("642cc02570463332ea3c7d65"),
+    coffeeName: 'American',
+    roastType: 'Medium',
+    details: 'American is a medium roast coffee that is medium brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a medium roast coffee.'
+  },
+  {
+    _id: ObjectId("642cc04770463332ea3c7d66"),
+    coffeeName: 'City',
+    roastType: 'Medium',
+    details: 'City is a medium roast coffee that is medium brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a medium roast coffee.'
+  },
+  {
+    _id: ObjectId("642cc07070463332ea3c7d67"),
+    coffeeName: 'French',
+    roastType: 'Dark',
+    details: 'French is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee.'
+  },
+  {
+    _id: ObjectId("642cc08870463332ea3c7d68"),
+    coffeeName: 'Italian',
+    roastType: 'Dark',
+    details: 'Italian is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee.'
+  }
+]
+demos> 
