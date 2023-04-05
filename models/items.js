@@ -6,11 +6,10 @@ const Schema = mongoose.Schema;
 
 const itemSchema = newSchema({
 
-  itemName: { type: String, required: [true, 'item name is required'] },
-  itemTopic: { type: String, required: [true, 'item topic is required'] },
+  coffeeName: { type: String, required: [true, 'item name is required'] },
+  coffeeCategory: { type: String, required: [true, 'item topic is required'] },
   details: { type: String, required: [true, 'details are required'] },
   roastType: { type: String, required: [true, 'roast type is required'] },
-  coffeeName: { type: String, required: [true, 'coffee name is required'] },
   date: { type: Date, default: Date.now },
   user: { type: Schema.Types.ObjectId, ref: "User" }
 });
@@ -21,13 +20,15 @@ module.exports = mongoose.model("Item", itemSchema);
 // const Item = mongoose.model("Item", itemSchema);
 
 // let items = newItem({
-//   itemName: "Cinnamon",
-//   itemTopic: "Light",
-//   details: "Cinnamon is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a lighter roast coffee.",
-//   roastType: "Light",
-//   coffeeName: "Cinnamon",
-// },
-//   {
+// _id: "5e9b9b9b9b9b9b9b9b9b9b9b",
+// db.items.insertOne({ "coffeeName": "Cinnamon", "roastType": "Light", "details": "Cinnamon is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a light roast coffee."})
+
+// db.items.insertOne({ "coffeeName": "New England", "roastType": "Light", "details": "New England is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a light roast coffee."})
+// db.items.insertOne({ "coffeeName": "Half City", "roastType": "Light", "details": "Half City is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a light roast coffee."})
+// db.items.insertOne({ "coffeeName": "American", "roastType": "Medium", "details": "American is a medium roast coffee that is medium brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a medium roast coffee."})
+//   db.items.insertOne({ "coffeeName": "City", "roastType": "Medium", "details": "City is a medium roast coffee that is medium brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a medium roast coffee."})
+//   db.items.insertOne({ "coffeeName": "French", "roastType": "Dark", "details": "French is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee."})
+//   db.items.insertOne({ "coffeeName": "Italian", "roastType": "Dark", "details": "Italian is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee."})
 //     itemName: "New England",
 //     itemTopic: "Light",
 //     details: "New England is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a lighter roast coffee.",
@@ -147,7 +148,7 @@ module.exports = mongoose.model("Item", itemSchema);
   //   roastType: "Dark",
   //   coffeeName: "Russian",
   // },
-  // { 
+  // {
 
 // );
 
