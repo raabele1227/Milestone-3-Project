@@ -1,0 +1,50 @@
+[{
+  "_id": {
+    "$oid": "642cbf0770463332ea3c7d62"
+  },
+  "coffeeName": "Cinnamon",
+  "roastType": "Light",
+  "details": "Cinnamon is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who prefer a lighter roast coffee."
+},{
+  "_id": {
+    "$oid": "642cbf5e70463332ea3c7d63"
+  },
+  "coffeeName": "New England",
+  "roastType": "Light",
+  "details": "New England is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who prefer a lighter roast coffee."
+},{
+  "_id": {
+    "$oid": "642cbf7570463332ea3c7d64"
+  },
+  "coffeeName": "Half City",
+  "roastType": "Light",
+  "details": "Half City is a light roast coffee that is light brown in color. It has a mild flavor and is a great choice for those who prefer a lighter roast coffee."
+},{
+  "_id": {
+    "$oid": "642cc02570463332ea3c7d65"
+  },
+  "coffeeName": "American",
+  "roastType": "Medium",
+  "details": "American is a medium roast coffee that is medium brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a medium roast coffee."
+},{
+  "_id": {
+    "$oid": "642cc04770463332ea3c7d66"
+  },
+  "coffeeName": "City",
+  "roastType": "Medium",
+  "details": "City is a medium roast coffee that is medium brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a medium roast coffee."
+},{
+  "_id": {
+    "$oid": "642cc07070463332ea3c7d67"
+  },
+  "coffeeName": "French",
+  "roastType": "Dark",
+  "details": "French is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee."
+},{
+  "_id": {
+    "$oid": "642cc08870463332ea3c7d68"
+  },
+  "coffeeName": "Italian",
+  "roastType": "Dark",
+  "details": "Italian is a dark roast coffee that is dark brown in color. It has a mild flavor and is a great choice for those who are new to coffee. It is also a great choice for those who prefer a dark roast coffee."
+}]
