@@ -1,0 +1,97 @@
+<%- include('./partials/header.ejs')%>
+<img
+  id="roast"
+  src="https://tastethelatte.com/wp-content/uploads/2022/09/ODT-Home-Page-Images-38.png"
+  alt="Light, Medium, Dark Roast Coffee beans"
+  width="500"
+  height="600"
+/>
+
+<h1>Light</h1>
+<ul>
+  <li>Cinnamon</li>
+  <li>New England</li>
+  <li>Half City</li>
+</ul>
+
+<h1>Medium</h1>
+<ul>
+  <li>American</li>
+  <li>City</li>
+  <li>Breakfast</li>
+</ul>
+
+<h1>Dark roast</h1>
+<ul>
+  <li>French</li>
+  <li>Italian</li>
+  <li>Spanish</li>
+</ul>
+<%- include('./partials/footer.ejs')%>
+
+
+
+
+
+
+<!-- <%- include('./partials/header.ejs')%>
+
+  
+     
+  <div class="content"> 
+          <img id="roast" src="https://tastethelatte.com/wp-content/uploads/2022/09/ODT-Home-Page-Images-38.png" alt="Light, Medium, Dark Roast Coffee beans" width="500" height="600">
+  
+  <h1>Light</h1>
+  <ul>    
+      <li>Cinnamon</li>
+      <li>New England</li>
+      <li>Half City</li>
+  </ul>
+  
+  <h1> Medium</h1>
+  <ul>    
+      <li>American</li>
+      <li>City</li>
+      <li>Breakfast</li>
+  </ul>
+  
+  
+  <h1>Dark roast</h1>
+  <ul>    
+      <li>French</li>
+      <li>Italian</li>
+      <li>Spanish</li>
+  </ul>
+  
+
+
+
+<div class="roasts-container">
+  <% trades.map(trade => { %>
+  <div class="trade-card">
+    <div class="trade-title"><%= trade.coffeeName %></div>
+    <div class="trade-card-roasts">
+      <% roasts.filter(roast => roast === trade.roastType).map(roast => { %>
+      <div><%= roast %></div>
+      <% }); %>
+    </div>
+  </div>
+  <% }); %>
+</div>
+
+
+
+<div class="roasts-container">
+  <% roasts.map(roast => { %>
+  <div class="roast-card">
+    <div class="roast-title"><%= roast %></div>
+    <div class="roast-card-trades">
+      <% trades.filter(trade => trade.roastType === roast).map(trade => { %>
+      <div><%= trade.coffeeName %></div>
+      <% }); %>
+    </div>
+  </div>
+  <% }); %>
+</div>
+
+<%- include('./partials/footer.ejs')%> -->
